@@ -11,7 +11,7 @@
 }
 
 span.text-animation-chatgpt .cursor {
-    display: inline-block;
-    width: 10px;
-    animation: flicker 0.5s infinite;
+  display: inline-block;
+  width: 10px;
+  animation: flicker 0.5s infinite;
 }
