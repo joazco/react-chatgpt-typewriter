@@ -1,0 +1,52 @@
+{
+  "name": "react-chatgpt-typewriter",
+  "version": "1.0.2",
+  "description": "Animate your texts with a typing effect inspired by ChatGPT.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "keywords": [
+    "reactjs",
+    "text",
+    "text effect",
+    "typewriter",
+    "text animation",
+    "chatGPT style typing",
+    "javascript",
+    "typescript",
+    "ui"
+  ],
+  "publishConfig": {},
+  "files": [
+    "lib/",
+    "LICENSE"
+  ],
+  "author": "Jordan AZOULAY <jazoulay@joazco.com> (https://github.com/joazco)",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:joazco/react-matrix-code-rain.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joazco/react-matrix-code-rain/issues"
+  },
+  "homepage": "https://github.com/joazco/react-matrix-code-rain",
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "@types/react": "^18.2.14",
+    "jest": "^28.1.0",
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.3",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.7.2"
+  },
+  "scripts": {
+    "build": "rm -rf lib/ && tsc && cp src/index.css lib/",
+    "format": "prettier --write \"src/**/*.tsx\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepublish": "npm run format; npm run lint; npm run build"
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}

@@ -1,0 +1,17 @@
+@keyframes flicker {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+span.text-animation-chatgpt .cursor {
+    display: inline-block;
+    width: 10px;
+    animation: flicker 0.5s infinite;
+}
