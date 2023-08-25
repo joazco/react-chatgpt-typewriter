@@ -13,12 +13,16 @@ npm i react-chatgpt-typewriter
 ### Declaration
 
 ```typescript
-type ChatGPTTypewriterEffectProps = {
+export type CursorProps = {
+  fill?: string;
+  width?: string;
+  height?: string;
+  marginLeft?: string;
+};
+export type ChatGPTTypewriterEffectProps = {
   text: string;
   delay?: number;
-  fill?: string;
-  width?: number;
-  height?: number;
+  cursor?: CursorProps;
   hideWhenFinished?: boolean;
   onChange?: (text: string) => void;
   onFinished?: () => void;
@@ -45,9 +49,11 @@ function App() {
     <div className="App">
       <ChatGPTTypewriterEffect
         delay={50}
-        width={'2em'}
-        height={'3em'}
-        marginLeft="1em"
+        cursor={{
+          width: '2em',
+          height: '3em',
+          marginLeft: '1em',
+        }}
         onFinished={() => {
           console.log('Text writed');
         }}

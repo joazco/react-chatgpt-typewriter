@@ -1,12 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
 
-type ChatGPTTypewriterEffectProps = {
-  text: string;
-  delay?: number;
+export type CursorProps = {
   fill?: string;
   width?: string;
   height?: string;
   marginLeft?: string;
+};
+
+export type ChatGPTTypewriterEffectProps = {
+  text: string;
+  delay?: number;
+  cursor?: CursorProps;
   hideWhenFinished?: boolean;
   onChange?: (text: string) => void;
   onFinished?: () => void;
@@ -14,29 +18,26 @@ type ChatGPTTypewriterEffectProps = {
 const ChatGPTTypewriterEffect: React.FC<ChatGPTTypewriterEffectProps> = ({
   text,
   delay = 10,
-  fill = '#E8E8E8',
-  width,
-  height,
-  marginLeft = '3px',
+  cursor = {},
   hideWhenFinished,
   onChange,
   onFinished,
 }) => {
   const [displayedText, setDisplayedText] = useState<string>('');
   const [isFinished, setIsFinished] = useState<boolean>(false);
-
   const style = useMemo(() => {
-    const s: { width?: string; height?: string; marginLeft: string } = {
-      marginLeft,
-    };
-    if (width) {
-      s.width = width;
+    const s: { width?: string; height?: string; marginLeft?: string; backgroundColor?: string } = {};
+    if (cursor?.width) {
+      s.width = cursor.width;
     }
-    if (height) {
-      s.height = height;
+    if (cursor?.height) {
+      s.height = cursor.height;
+    }
+    if (cursor?.marginLeft) {
+      s.marginLeft = cursor.marginLeft;
     }
     return s;
-  }, [width, height]);
+  }, [cursor]);
   const show = useMemo(() => {
     if (hideWhenFinished && isFinished) {
       return false;
@@ -80,11 +81,7 @@ const ChatGPTTypewriterEffect: React.FC<ChatGPTTypewriterEffectProps> = ({
   return (
     <span className="text-animation-chatgpt">
       {displayedText}
-      {show && (
-        <svg viewBox="8 4 8 16" xmlns="http://www.w3.org/2000/svg" className="cursor" style={style}>
-          <rect x="10" y="10" width="12" height="12" fill={fill} />
-        </svg>
-      )}
+      {show && <span className="cursor" style={style}></span>}
     </span>
   );
 };

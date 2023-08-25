@@ -7,9 +7,11 @@ function App() {
     <div className="App">
       <ChatGPTTypewriterEffect
         delay={50}
-        width={'2em'}
-        height={'3em'}
-        marginLeft="1em"
+        cursor={{
+          width: '2em',
+          height: '3em',
+          marginLeft: '1em',
+        }}
         onFinished={() => {
           console.log('Text writed');
         }}

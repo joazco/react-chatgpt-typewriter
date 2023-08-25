@@ -1,11 +1,14 @@
 /// <reference types="react" />
-type ChatGPTTypewriterEffectProps = {
-    text: string;
-    delay?: number;
+export type CursorProps = {
     fill?: string;
     width?: string;
     height?: string;
     marginLeft?: string;
+};
+export type ChatGPTTypewriterEffectProps = {
+    text: string;
+    delay?: number;
+    cursor?: CursorProps;
     hideWhenFinished?: boolean;
     onChange?: (text: string) => void;
     onFinished?: () => void;
