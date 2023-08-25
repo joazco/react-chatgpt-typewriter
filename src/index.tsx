@@ -54,7 +54,9 @@ const ChatGPTTypewriterEffect: React.FC<ChatGPTTypewriterEffectProps> = ({
         setDisplayedText((prevText) => {
           if (typeof nextText === 'undefined') return prevText;
           const finalText = prevText + nextText;
-          onChange && onChange(finalText);
+          if (onChange) {
+            onChange(finalText);
+          }
           return finalText;
         });
       } else {

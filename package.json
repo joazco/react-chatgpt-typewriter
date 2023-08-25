@@ -1,6 +1,6 @@
 {
   "name": "react-chatgpt-typewriter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Animate your texts with a typing effect inspired by ChatGPT.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -24,12 +24,12 @@
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
-    "url": "git@github.com:joazco/react-matrix-code-rain.git"
+    "url": "git@github.com:joazco/react-chatgpt-typewriter"
   },
   "bugs": {
-    "url": "https://github.com/joazco/react-matrix-code-rain/issues"
+    "url": "https://github.com/joazco/react-chatgpt-typewriter/issues"
   },
-  "homepage": "https://github.com/joazco/react-matrix-code-rain",
+  "homepage": "https://github.com/joazco/react-chatgpt-typewriter",
   "devDependencies": {
     "@types/jest": "^27.5.1",
     "@types/react": "^18.2.14",
